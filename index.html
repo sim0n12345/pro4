@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>The mission of saving Private Ryan</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+</head>
+
+<body class="fonti">
+
+
+    <style>
+        #map {
+            position: fixed;
+            width: 50%;
+        }
+        
+        #features {
+            width: 50%;
+            margin-left: 50%;
+         
+            color: white;
+            overflow-y: scroll;
+            background-image: url(images/baggrund2.jpg)
+        }
+        
+        section {
+            padding: 25px 50px;
+            line-height: 25px;
+            border-bottom: 1px solid #ddd;
+            opacity: 0.25;
+            font-size: 20px;
+        }
+        
+        section.active {
+            opacity: 1;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 200px;
+        }
+
+    </style>
+
+    <div id='map'></div>
+    <div id='features'>
+        <section id='omaha' class='active'>
+            <h3>Omaha Beach 6. Juni 1944</h3>
+            <p>De allierede indleder invasionen af Vesteuropa ved landgang i Normandiet. Ombord på en af de mange fartøjer er Kaptajn Miller og sergent Horvath. Hverken Miller eller Horvath er på dette tidspunkt forberedte på hvilken mission der venter dem efter landgang.</p>
+        </section>
+
+        <section id='washington'>
+            <h3>7. Juni 1944, Mrs. Ryan og hendes sønner</h3>
+            <p>Mrs. Ryan får den triste besked om 3 af hendes sønners skæbne. Det amerikanske forsvar beslutter sig for at indlede en redningsaktion, som har til formål at redde Mrs. Ryans sidste søn, James Francis Ryan.  </p>
+        </section>
+
+        <section id='normandiet'>
+            <h3>Succesfuld landgang, 10. Juni 1944</h3>
+            <p>Ved mørkets frembrud den 6. Juni 1944, havde de allierede skabt fodfeste på Omaha beach. Fra den 6. - 10. juni 1944, genvinder de amerikanske soldater deres styrke. Landgangen ved Omaha beach har kostet ca. 10000 amerikanske soldater livet. Kort efter landgangen får kaptajn Miller en ordre fra det amerikanske forsvar. Det bliver hans ansvar at sammensætte en gruppe, som skal forsøge at finde Menig J. F. Ryan, og bringe ham tilbage i sikkerhed. </p>
+        </section>
+
+        <section id='ramelle'>
+            <h3>Private Ryan</h3>
+            <p>Kaptajn Miller får samlet en mindre gruppe af soldater, som han tager med sig ud på missionen. Efter nogle dages vandring i retning mod byen Ramelle, opstår der komplikationer lidt uden for byen Ramelle. En tysk gruppe soldater befinder sig på marken, som Kaptajn Miller og hans gruppe skal krydse. Efter kort tids tænken, bliver de tyske soldater angrebet og dræbt, men ikke af Kaptajn Miller og hans gruppe. Det viser sig, at gruppen, som angreb de tyske soldater, er en anden amerikansk deling, og i denne deling befinder Menig J. F. Ryan sig.  </p>
+        </section>
+        <section id='fight'>
+            <h3>Kampen i Ramelle, 13. Juni 1944</h3>
+            <p>Da kaptajn Miller har fundet Menig Ryan, beslutter de sig for at bevæge sig ind i byen Ramelle, da der er bedre sikkerhed blandt de mange ruiner. Det skal dog vise sig, at et stort tysk kompagni, anvender byen Ramelle som en gennemfartsvej. Dette betyder, at der inden længe, kommer et tysk kompagni, med kampvogne og ca. 50-100 mænd gennem byen. Kaptajn Miller forbereder sig på en større kamp. Den kamp udspiller sig 13. juni 1944. </p>
+        </section>
+        <section id='miller'>
+            <h3>Kaptajn Miller dør</h3>
+            <p>Kaptajn Miller og hans gruppe formår at svække det tyske kompagni, samt holde dem tilbage længe nok til, at amerikanske bombefly kan nå ind til byen og bekæmpe de sidste tyske trupper. Desværre bliver Kaptajn Miller fatalt såret, og han afgår ved døden kort efter de amerikanske trupper får nedkæmpet resten af de tyske trupper.</p>
+        </section>
+        
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+     
+      
+  
+       
+
+       
+   
+        <section>
+
+
+        </section>
+    </div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic2ltMG4xMjM0NSIsImEiOiJjamZqcjIydzkzMmVuMnlwa3AxM3RmbDJqIn0.3L9Sxgm6SWz1pW0pw1VIGQ';
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/sim0n12345/cjfmud6wr1bei2rllebaoq680',
+            center: [-0.8909986, 49.3700969],
+            zoom: 15.5,
+            bearing: 27,
+            pitch: 45
+        });
+
+        var chapters = {
+            'omaha': {
+                bearing: 27,
+                center: [-0.8909986, 49.3700969],
+                zoom: 15.5,
+                pitch: 20
+            },
+            'washington': {
+                duration: 6000,
+                center: [-77.0846157, 38.8937091],
+                bearing: 150,
+                zoom: 7,
+                pitch: 0
+            },
+            'normandiet': {
+                bearing: 90,
+                center: [-0.8909986, 49.3700969],
+                zoom: 10,
+                speed: 0.6,
+                pitch: 40
+            },
+            'ramelle': {
+                bearing: 90,
+                center: [-1.406740, 49.431565],
+                zoom: 12.3,
+                speed: 0.3
+            },
+            'fight': {
+                bearing: 45,
+                center: [-1.4266796, 49.4436461],
+                zoom: 13,
+                pitch: 20,
+                speed: 0.2
+            },
+            'miller': {
+                bearing: 180,
+                center: [-1.4461178,49.4624851],
+                zoom: 14.7,
+                speed: 0.5
+                
+            }
+      
+        };
+
+        // On every scroll event, check which element is on screen
+        window.onscroll = function() {
+            var chapterNames = Object.keys(chapters);
+            for (var i = 0; i < chapterNames.length; i++) {
+                var chapterName = chapterNames[i];
+                if (isElementOnScreen(chapterName)) {
+                    setActiveChapter(chapterName);
+                    break;
+                }
+            }
+        };
+
+        var activeChapterName = 'baker';
+
+        function setActiveChapter(chapterName) {
+            if (chapterName === activeChapterName) return;
+
+            map.flyTo(chapters[chapterName]);
+
+            document.getElementById(chapterName).setAttribute('class', 'active');
+            document.getElementById(activeChapterName).setAttribute('class', '');
+
+            activeChapterName = chapterName;
+        }
+
+        function isElementOnScreen(id) {
+            var element = document.getElementById(id);
+            var bounds = element.getBoundingClientRect();
+            return bounds.top < window.innerHeight && bounds.bottom > 0;
+        }
+
+    </script>
+
+</body>
+
+</html>
